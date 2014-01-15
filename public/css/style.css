@@ -1,0 +1,388 @@
+body {
+	background: #f4f4f2; /*background: #253240;*/
+	border-top: 5px solid #dc6153; /*#97c024*/
+	color: #4d4d4d;
+	font-family: 'Open Sans',Arial;
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 40px;
+}
+
+.clear { clear: both; }
+.hidden { display: none; }
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+a, a:hover, a:active, a:visited {
+	color: #dc6153;
+	text-decoration: none;
+}
+a:hover, a:active { text-decoration: underline; }
+
+/*p {
+	margin: 0;
+	padding: 0;
+}*/
+
+#header {
+	position: relative;
+	padding-bottom: 40px;
+}
+
+	#header a {
+		color: #fff;
+	}
+
+#content {
+}
+
+	#content.medium {
+		margin: 40px auto;
+		width: 980px;
+	}
+
+	#content .msgbox {
+		background: #e1ffd1;
+		border: 1px solid #97c024;
+		color: #4c902b;
+		margin: auto auto 10px auto;
+		padding: 10px;
+		text-align: center;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-o-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-khtml-border-radius: 10px;
+	}
+		#content .msgbox.error {
+			background: #ffe8e8;
+			border: 1px solid #ff4900;
+			color: #ff4900;
+		}
+
+#login {
+	margin: auto;
+	width: 400px;
+}
+
+	#login h2 {
+		display: inline-block;
+		background: #fff;
+		font-size: 2em;
+		font-weight: normal;
+		margin: 0;
+		padding: 0 15px;
+	}
+
+	#login .login-social {
+		background: #fff;
+		padding: 10px;
+		text-align: center;
+	}
+
+#my-user {
+	position: absolute;
+	color: #fff;
+	top: 0; right: 10px;
+}
+
+	#my-user span.welcome {
+		background: #dc6153;
+		padding: 0 5px 5px 5px;
+	}
+
+	#my-user a.logout {
+		display: inline-block;
+		background: #cb3837;
+		color: #fff;
+		padding: 0 5px 5px 5px;
+	}
+
+#back-to-chat a.chat {
+	display: inline-block;
+	background: #dc6153;
+	color: #fff;
+	margin-left: 20px;
+	padding: 0 5px 5px 5px;
+}
+
+#users-online {
+	position: absolute;
+	padding: 0 5px 5px 5px;
+	top: 0; left: 10px;
+	width: 220px;
+}
+
+	#users-online h3 {
+		display: inline-block;
+		background: #dc6153;
+		color: #fff;
+		font-weight: normal;
+		margin: 0;
+		padding: 0 5px 5px 5px;
+	}
+
+	#users-online ul.users {
+		float: left;
+		list-style: none;
+		margin: 1px 0 0 0;
+		padding: 0;
+	}
+
+		ul.users li.active-user {
+			background: #dc6153;
+			color: #fff;
+			float: left;
+			margin: 0 0 1px 0;
+			padding: 3px;
+		}
+		ul.users li.inactive-user {
+			background-color: #c4c4c4;
+		}
+
+			ul.users li .avatar {
+				background: #fff;
+				float: left;
+				height: 48px; width: 48px;
+			}
+
+			ul.users li .user-info {
+				float: left;
+				margin: 0 5px;
+			}
+
+				.user-info .last-logon {
+					font-size: 10px;
+				}
+
+#chat {
+	margin: auto;
+	width: 700px;
+}
+
+	#chat h3 {
+		display: inline-block;
+		background: #fff;
+		margin: 0;
+		padding: 5px 10px;
+	}
+
+	.chaton {
+		background: #fff;
+		padding: 10px;
+	}
+
+		.messages {
+			height: 400px;
+			overflow: hidden;
+			overflow-y: scroll;
+		}
+
+			.messages .post {
+				position: relative;
+				background: #f9f9f8;
+				margin-bottom: 1px;
+				padding: 3px;
+				/*Solución universal para Display: inline-block y sus espacios de separación*/
+				word-spacing: -1px;
+				font-size: 1px;
+				letter-spacing: -1px;
+			}
+				
+				.post > * {
+					/*Solución universal para Display: inline-block y sus espacios de separación*/
+					word-spacing: normal;
+					font-size: 0.95rem; /*Unidad de medida para IE8 y -*/
+					letter-spacing: normal;
+					white-space: normal;
+					/*Hack para "display: inline-block;" en IE6/IE7*/
+					zoom: 1;
+					*display: inline;
+				}
+				.post .user {
+					display: inline-block;
+					background: #fff;
+					font-size: 10px;
+					height: 48px; width: 48px;
+					margin-right: 5px;
+					overflow: hidden;
+				}
+				.post .message {
+					display: inline-block;
+					width: 90%;
+					vertical-align: top;
+				}
+				.post .timeago {
+					position: absolute;
+					font-size: 10px;
+					bottom: 2px; right: 4px;
+				}
+
+	.write-post {
+		background: #fff;
+		padding: 0 10px 10px 10px;
+	}
+
+		.write-post textarea#content-post {
+			color: #4d4d4d;
+			font-size: 16px;
+			height: 20px;
+			margin: 0;
+			padding: 10px;
+			width: 594px;
+			min-width: 594px;
+			max-width: 594px;
+		}
+
+		.write-post button#send-post {
+			margin: 0;
+			height: 40px;
+			width: 60px;
+		}
+
+#user-profile {
+	background: #fff;
+	margin: auto;
+	padding: 10px;
+	width: 480px;
+}
+
+	#user-profile h3 {
+		background: #f9f9f8;
+		margin: 0 0 1px 0;
+		padding: 5px;
+	}
+
+	#user-profile .buttons {
+		margin-top: 10px;
+	}
+
+	#user-profile .avatar {
+		float: left;
+		background: #f9f9f8;
+		padding: 5px;
+		height: 48px; width: 48px;
+	}
+
+	#user-profile .user-info {
+		display: inline-block;
+	}
+		#user-profile .user-info ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+			#user-profile .user-info ul li {
+				background: #f9f9f8;
+				margin: 0 0 1px 0;
+				padding: 3px 3px 3px 5px;
+			}
+				#user-profile .user-info ul li label {
+					display: inline-block;
+					line-height: 24px;
+					vertical-align: top;
+					width: 150px;
+				}
+				#user-profile .user-info ul li input {
+					vertical-align: top;
+				}
+
+.error {
+}
+
+	.error h1 {
+		font-size: 4.5em;
+		margin: 0;
+		padding: 0;
+	}
+
+	.error h2 {
+		font-size: 2em;
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+	}
+
+	.error a {
+		font-size: 2em;
+	}
+
+	.error span {
+		font-size: 1.5em;
+	}
+
+.btn-submit {
+	display: inline-block;
+	background: #ff4900;
+	border: 0;
+	color: #fff;
+	padding: 0.3em 1em 0.4em 1em;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+.btn-submit:hover, .btn-submit:active {
+	background-color: #cc3d33;
+	transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	-ms-transition: background-color 0.5s;
+}
+
+.btn {
+	display: inline-block;
+	background: #ff4900;
+	border: none;
+	color: #fff !important;
+	cursor: pointer;
+	font-family: 'Raleway', sans-serif;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	vertical-align: top;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	/*Hack para "display: inline-block;" en IE6/IE7*/
+	zoom: 1;
+	*display: inline;
+}
+
+.btn:hover, .btn:active {
+	background-color: #cc3d33;
+	color: #fff;
+	text-decoration: none;
+	transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	-ms-transition: background-color 0.5s;
+}
+
+.btn-twitter {
+	background-color: #00acee;
+	border: 1px solid #0092cb;
+	border-bottom-width: 2px;
+}
+.btn-twitter:hover, .btn-twitter:active {
+	background-color: #1ec4fe
+}
+
+.btn-facebook {
+	background-color: #3b5998;
+	border: 1px solid #133783;
+	border-bottom-width: 2px;
+}
+.btn-facebook:hover, .btn-facebook:active {
+	background-color: #4b67a1
+}

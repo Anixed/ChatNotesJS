@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Iniciar Sesión | Chat/Notes in Node.js{% endblock %}
+
+{% block header %}
+	<div id="header"></div>
+{% endblock %}
+
+{% block content %}
+
+	<div id="content" class="medium">
+
+		<section id="login">
+			{% if error %}
+			<div class="msgbox error">{{error|safe}}</div>
+			{% endif %}
+
+			<h2>Bienvenido!</h2>
+			<div class="login-social">
+				<p>Inicia sesión con redes sociales.</p>
+				
+				<a class="btn btn-twitter" href="/login/twitter">
+					<i class="fa fa-twitter fa-2x"></i> Twitter
+				</a>
+				<a class="btn btn-facebook" href="/login/facebook">
+					<i class="fa fa-facebook fa-2x"></i> Facebook
+				</a>
+
+				<p>Esta aplicación sólo utiliza las cuentas de Facebook y Twitter para poder acceder a la plataforma. Nunca se compartirá algún tipo de información con terceros.</p>
+			</div>
+		</section>
+
+	</div>
+
+{% endblock %}

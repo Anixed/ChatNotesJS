@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{title}} | Chat/Notes in Node.js{% endblock %}
+
+{% block header %}
+	<div id="header"></div>
+{% endblock %}
+
+{% block content %}
+
+	<div id="content" class="medium">
+		<section id="{{status}}" class="error">
+			<h1>{{title}}</h1>
+			<h2>{{error.err}}</h2>
+			{{error.details|safe}}
+		</section>
+	</div>
+
+{% endblock %}

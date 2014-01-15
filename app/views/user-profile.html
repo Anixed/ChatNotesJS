@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}Perfil de usuario | Chat/Notes in Node.js{% endblock %}
+
+{% block header-content %}
+
+	<div id="back-to-chat">
+		<a href="/chat" class="chat"><i class="fa fa-comments-o fa-lg"></i> Volver al Chat</a>
+	</div>
+
+{% endblock %}
+
+{% block content %}
+
+	<div id="content" class="medium">
+		
+		<section id="user-profile">
+		{% if error %}
+		<div class="msgbox error">{{error|safe}}</div>
+		{% elseif msg %}
+		<div class="msgbox">{{msg|safe}}</div>
+		{% endif %}
+		
+		<h3>Perfil del usuario:</h3>
+		{% if (action == 'edit-my-profile') %}
+			<div class="avatar"><img src="{{userSearch.avatar}}"></div>
+			<form method="POST" action="/user/profile/update" id="user-form">
+			<div class="user-info">
+				<ul>
+					<li>
+						<label for="username">Nombre usuario:</label>
+						<input type="text" name="username" value="{{userSearch.username}}" size="30" required />
+					</li>
+					<li>
+						<label for="displayname">Nombre a mostrar:</label>
+						<input type="text" name="displayname" value="{{userSearch.displayname}}" size="30" required />
+					</li>
+					<li>
+						<label for="email">E-mail:</label>
+						<input type="email" name="email" value="{{userSearch.email}}" size="30" required />
+					</li>
+					<li>
+						<label for="avatar">Avatar:</label>
+						<input type="text" name="avatar" value="{{userSearch.avatar}}" size="30" readonly="readonly" />
+					</li>
+				</ul>
+			</div>
+			<div class="buttons right">
+				<button class="btn-submit" type="submit"><i class="fa fa-pencil fa-lg"></i> Actualizar</button>
+			</div>
+			</form>
+		{% elseif (action == 'view-user-profile') %}
+			<div class="avatar"><img src="{{userSearch.avatar}}"></div>
+			<div class="user-info">
+				<ul>
+					<li>
+						<label for="username">Nombre usuario:</label>
+						<input type="text" name="username" value="{{userSearch.username}}" size="30" disabled="disabled" />
+					</li>
+					<li>
+						<label for="displayname">Nombre a mostrar:</label>
+						<input type="text" name="displayname" value="{{userSearch.displayname}}" size="30" disabled="disabled" />
+					</li>
+					<li>
+						<label for="joined">Cuenta creada:</label>
+						<input type="text" name="joined" value="{{userSearch.joined}}" size="30" disabled="disabled" />
+					</li>
+					<li>
+						<label for="last_logon">Ultimo inicio sesión:</label>
+						<input type="text" name="last_logon" value="{{userSearch.last_logon}}" size="30" disabled="disabled" />
+					</li>
+					<li>
+						<label for="last_logout">Ultimo cierre sesión:</label>
+						<input type="text" name="last_logout" value="{{userSearch.last_logout}}" size="30" disabled="disabled" />
+					</li>
+				</ul>
+			</div>
+		{% endif %}
+		</section>
+
+	</div>
+
+{% endblock %}
