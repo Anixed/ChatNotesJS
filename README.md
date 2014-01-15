@@ -2,7 +2,7 @@
 
 Chat desarrollado con Node.js y MongoDB. Programado con el fin de introducirme y aprender todo de este hermoso y para mi desconocido lenguaje.
 
-Actualmente está corriendo en Heroku: http://chatnotesjs.herokuapp.com/
+Actualmente lo tengo corriendo en Heroku: http://chatnotesjs.herokuapp.com/
 
 ## Características
 
@@ -11,10 +11,10 @@ Paso a detallar puntos importantes sobre las librerías utilizadas, middlewares,
 - MongoDB: como base de datos del chat.
 - Redis: para almacenar las sesiones de los usuarios.
 - Swig: como el motor de plantillas.
-- Passport: para controlar la autenticación (inicio de sesión) con redes sociales. (Trabaja sobre el middleware de sesiones configurado en Express).
+- Passport: para controlar la autenticación (inicio de sesión) con redes sociales. (Trabaja sobre el middleware de sesiones configurado en Express)
 
 - Dotenv: para manejar/separar las variables de entorno entre el servidor de desarrollo y el de producción.
-* Se debe crear en la raíz un archivo ".env" en el cual se definan las variables de entorno que utiliza la aplicación:
+*Se debe crear en la raíz un archivo ".env" en el cual se definan las variables de entorno que utiliza la aplicación:
 ```
 #NODE_ENV = 'production'
 MONGOHQ_URL = "mongodb://<user>:<password>@server.mongohq.com:<port>/<database>" #https://www.mongohq.com/
